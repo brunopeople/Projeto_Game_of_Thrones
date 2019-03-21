@@ -22,7 +22,7 @@ module.exports.autenticar = function(application, req, res) {
 		var connection = application.config.db_conexao;
 		var JogadoresDAO = new application.app.models.JogadoresDAO(connection);
 
-		JogadoresDAO.autenticar();
+		JogadoresDAO.autenticar(dados_formulario,req,res);
 
 		res.send('tudo ok para criar a sessão');
 }
